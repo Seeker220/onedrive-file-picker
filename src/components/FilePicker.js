@@ -18,11 +18,15 @@ const FilePicker = () => {
       viewType: 'all', // Allows selecting both files and folders
       success: (files) => {
         const selectedFile = files.value[0];
-        const filePath = selectedFile.parentReference.path + '/' + selectedFile.name;
+        const fullPath = selectedFile.parentReference.path + '/' + selectedFile.name;
+
         console.log('Files selected:', files);
 
+        // Extract the file path after 'root:/'
+        const pathAfterRoot = fullPath.split('root:/')[1];  // Get the part after 'root:/'
+
         // Set the file path in the state to display below the button
-        setFilePath(filePath);
+        setFilePath(pathAfterRoot);
       },
       cancel: () => console.log('Picker closed without selecting a file.'),
       error: (error) => console.error('Error:', error),
@@ -46,5 +50,6 @@ const FilePicker = () => {
       </div>
   );
 };
+
 
 export default FilePicker;
