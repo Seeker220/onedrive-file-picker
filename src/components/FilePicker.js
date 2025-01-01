@@ -12,7 +12,7 @@ const FilePicker = () => {
     }
 
     const odOptions = {
-      clientId: 'b15665d9-eda6-4092-8539-0eec376afd59',
+      clientId: '67c53245-75c0-466c-b1f6-b31bbe8a55b0',
       action: 'share',
       multiSelect: false,
       viewType: 'all', // Allows selecting both files and folders
